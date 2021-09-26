@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Detail</title>
+</head>
+<body>
+    <div class="container bg-secondary text-warning">
+         <h1 class="container" >Flight Fare Prediction model</h1>
+         <br><br>
+         <p>For Making such model that predict price of flight we got data in two xlsx files. one for training and one for testing to reduce the risk of overfitting (information leakage ) we split before preprocessing happen. 
+             <li>Data_Train.xlsx ---> containg row and colum (10683, 11)</li>
+             <li>Test_set.xlsx ---> containg row and colum (2671, 12) </li>
+            <br><br>
+             In this Data we have Qualitative and Quantitative variables so in Preprocessing stage we did the following steps.
+            <li>we check for null values</li>
+            <li>we check for unique values</li>
+            <li>we correct the format for hours and mints and then split to hour and mintues individualy by the help of pandas to_date() function.
+            <li>The hour and mintues split for Departure and Arrival time individualy. </li>   
+            <li>we also separete Day , Month , and Year for Departure and Arrival.</li>
+            <li>we also check for Visualization of box plot for Multivariate Analysis of price and one air  line price was high and all are were same almost. so we did not done normalization. </li>
+            <br>
+            Now its time to Wrangle Categorical Data variables in Training set.we have Nominal data and Ordinal data.
+            <li>we perform onehot encoder for nominal data variables.</li>
+            <li>we also performed label ecoder for Ordinal data.</li>
+            <br>
+            So same goes all Preprocessing for Test set as well individually. 
+            <h6><---------------------------------------------------------------------------------------------------------------------------------------------------------></h6>
+            <br>
+            NOw its time for Feature Selection where we use the Following method.
+            <br>
+            <li>Heat Map</li>
+            <li>Feature_Importance ( we used ExtraTreesRegressor from sklearn )</li>
+            <li>Select K Best</li>
+            <br>
+            Now its model building time (Machine Learning model --> Random Forest)
+            we validate model and final got 0.79% accuracy
+            <li>We also tune this model Hyperparameters </li>
+            <li>Used Rndomised Searced Cv </li>
+            <li>Used Grid Search Cv</li>
+            <br>
+            Finally after tuning we got 0.81% Accuracy for Prediction
+            </p> 
+
+    </div>
+</body>
+</html>
